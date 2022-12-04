@@ -14,7 +14,7 @@ from pandas.api.types import (
 )
 from scipy.stats import zscore
 
-df = pd.read_csv('data/PCOS_data.csv')
+df = pd.read_csv('PCOS_data.csv')
 #df = pd.read_csv('/Users/almgacis/Documents/MSU/CMSE_830/HW/data/PCOS_data.csv')
 
 #Replacing nans with median
