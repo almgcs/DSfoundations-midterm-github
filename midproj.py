@@ -1,12 +1,11 @@
 import altair as alt
 import matplotlib.pyplot as plt
-#import numpy as np
 import pandas as pd
 import plotly.express as px
 import seaborn as sns
 import streamlit as st
-# import scipy
 import statsmodels.api as sm
+import numpy as np
 from pandas.api.types import (
     is_categorical_dtype,
     is_datetime64_any_dtype,
@@ -33,7 +32,6 @@ df2['Avg F size (mm)'] = round((df2['Avg. F size (L) (mm)'] + df2['Avg. F size (
 
 
 st.sidebar.title("About the Data")
-# st.sidebar.header("by Angelica Gacis")
 st.sidebar.markdown("Polycystic ovary syndrome (PCOS) is a condition involving irregular, missed, or prolonged periods, and most of the time, excess androgen levels. The ovaries develop follicles (small collections of fluid), and may fail to release eggs on a regular basis. The dataset contains physical and clinical variables that might help with determining PCOS diagnosis and infertility related issues. The data was collected from 10 hospitals across Kerala, India.")
 st.sidebar.markdown('*The dataset entitled Polycystic ovary syndrome (PCOS) was made by Prasoon Kottarathil in 2020 and was published in [Kaggle](https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos).*')
 
@@ -125,7 +123,7 @@ df3z_cor = pd.concat([df3[cat_for_corr], df3[numerical].apply(zscore)], axis=1).
 
 
 #Raw with removed outliers (for plots and corr)
-#np.random.seed(33454)
+np.random.seed(33454)
 
 Q1 = df3[numerical].quantile(0.25)
 Q3 = df3[numerical].quantile(0.75)
